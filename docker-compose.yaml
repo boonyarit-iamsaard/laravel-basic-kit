@@ -1,0 +1,25 @@
+name: laravel-basic-kit
+
+services:
+  postgres:
+    container_name: laravel-basic-kit-postgres
+    image: docker.io/postgres:15-alpine
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: ${DB_DATABASE:-laravel-basic-kit}
+      POSTGRES_USER: ${DB_USERNAME:-laravel-basic-kit}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-laravel-basic-kit}
+    restart: unless-stopped
+    networks:
+      - laravel-basic-kit-network
+
+networks:
+  laravel-basic-kit-network:
+    name: laravel-basic-kit
+
+volumes:
+  pgdata:
+    name: laravel-basic-kit-pgdata
