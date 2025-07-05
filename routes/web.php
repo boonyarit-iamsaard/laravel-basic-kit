@@ -5,11 +5,11 @@ declare(strict_types=1);
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', fn () => view('home'))->name('home');
+Route::view('/', 'home')->name('home');
 
 // todo: reconsider whether email verification should be required for all protected routes.
 Route::middleware(['auth', 'verified'])->group(function (): void {
-    Route::get('/dashboard', fn () => view('dashboard'))->name('dashboard');
+    Route::view('/dashboard', 'dashboard')->name('dashboard');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
