@@ -12,6 +12,8 @@ use Illuminate\Notifications\Notifiable;
 
 /**
  * @use HasFactory<UserFactory>
+ *
+ * @mixin IdeHelperUser
  */
 final class User extends Authenticatable implements MustVerifyEmail
 {
