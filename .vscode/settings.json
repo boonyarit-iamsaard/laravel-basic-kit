@@ -1,0 +1,8 @@
+{
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "laravel-pint.enable": true,
+    "[blade]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}
