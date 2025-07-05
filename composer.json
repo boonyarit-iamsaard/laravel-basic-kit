@@ -61,6 +61,7 @@
             "@php artisan test"
         ],
         "ci": [
+            "./vendor/bin/pint --test",
             "npm run lint:check",
             "npm run format:check"
         ]
