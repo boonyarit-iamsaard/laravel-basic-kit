@@ -1,3 +1,9 @@
+<?php
+
+declare(strict_types=1);
+
+?>
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl leading-tight font-semibold text-gray-800 dark:text-gray-200">
@@ -27,3 +33,5 @@
         </div>
     </div>
 </x-app-layout>
+
+<?php

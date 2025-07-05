@@ -1,3 +1,9 @@
+<?php
+
+declare(strict_types=1);
+
+?>
+
 @props([
     'name',
     'show' => false,
@@ -78,3 +84,5 @@
         {{ $slot }}
     </div>
 </div>
+
+<?php

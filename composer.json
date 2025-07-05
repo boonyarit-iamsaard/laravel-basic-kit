@@ -22,7 +22,8 @@
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
         "pestphp/pest": "^3.8",
-        "pestphp/pest-plugin-laravel": "^3.2"
+        "pestphp/pest-plugin-laravel": "^3.2",
+        "rector/rector": "^2.1"
     },
     "autoload": {
         "psr-4": {
@@ -56,14 +57,21 @@
             "Composer\\Config::disableProcessTimeout",
             "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite"
         ],
+        "format": "npm run format",
+        "lint": "npm run lint",
+        "pint": "pint",
+        "rector": "rector",
+        "test:format": "npm run format:check",
+        "test:lint": "npm run lint:check",
+        "test:pest": "pest",
+        "test:pint": "pint --test",
+        "test:rector": "rector process --dry-run",
         "test": [
-            "@php artisan config:clear --ansi",
-            "@php artisan test"
-        ],
-        "ci": [
-            "./vendor/bin/pint --test",
-            "npm run lint:check",
-            "npm run format:check"
+            "@test:format",
+            "@test:lint",
+            "@test:pint",
+            "@test:rector",
+            "@test:pest"
         ]
     },
     "extra": {

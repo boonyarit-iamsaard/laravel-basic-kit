@@ -1,3 +1,9 @@
+<?php
+
+declare(strict_types=1);
+
+?>
+
 @props([
     'messages',
 ])
@@ -9,3 +15,5 @@
         @endforeach
     </ul>
 @endif
+
+<?php
