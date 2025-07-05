@@ -16,6 +16,23 @@ services:
         networks:
             - laravel-basic-kit-network
 
+    mailpit:
+        container_name: laravel-basic-kit-mailpit
+        image: docker.io/axllent/mailpit:latest
+        ports:
+            - '${FORWARD_MAILPIT_PORT:-1025}:1025'
+            - '${FORWARD_MAILPIT_UI_PORT:-8025}:8025'
+        restart: unless-stopped
+        volumes:
+            - mailpitdata:/data
+        environment:
+            MP_MAX_MESSAGES: 5000
+            MP_DATABASE: /data/mailpit.db
+            MP_SMTP_AUTH_ACCEPT_ANY: 1
+            MP_SMTP_AUTH_ALLOW_INSECURE: 1
+        networks:
+            - laravel-basic-kit-network
+
 networks:
     laravel-basic-kit-network:
         name: laravel-basic-kit
@@ -23,3 +40,5 @@ networks:
 volumes:
     pgdata:
         name: laravel-basic-kit-pgdata
+    mailpitdata:
+        name: laravel-basic-kit-mailpitdata
