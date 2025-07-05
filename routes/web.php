@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', fn () => view('home'))->name('home');
 
+// todo: reconsider whether email verification should be required for all protected routes.
 Route::middleware(['auth', 'verified'])->group(function (): void {
     Route::get('/dashboard', fn () => view('dashboard'))->name('dashboard');
 
