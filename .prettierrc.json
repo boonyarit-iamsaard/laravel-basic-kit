@@ -5,6 +5,7 @@
     "singleQuote": true,
     "trailingComma": "es5",
     "semi": true,
+    "endOfLine": "lf",
     "overrides": [
         {
             "files": "*.blade.php",
