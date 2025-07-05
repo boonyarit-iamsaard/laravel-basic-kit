@@ -1,9 +1,3 @@
-<?php
-
-declare(strict_types=1);
-
-?>
-
 @props([
     'status',
 ])
@@ -13,5 +7,3 @@ declare(strict_types=1);
         {{ $status }}
     </div>
 @endif
-
-<?php

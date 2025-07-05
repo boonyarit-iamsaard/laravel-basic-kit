@@ -1,9 +1,3 @@
-<?php
-
-declare(strict_types=1);
-
-?>
-
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -72,5 +66,3 @@ declare(strict_types=1);
         </div>
     </form>
 </x-guest-layout>
-
-<?php

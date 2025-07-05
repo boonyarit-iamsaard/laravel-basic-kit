@@ -1,9 +1,3 @@
-<?php
-
-declare(strict_types=1);
-
-?>
-
 <x-guest-layout>
     <form method="POST" action="{{ route('password.store') }}">
         @csrf
@@ -64,5 +58,3 @@ declare(strict_types=1);
         </div>
     </form>
 </x-guest-layout>
-
-<?php

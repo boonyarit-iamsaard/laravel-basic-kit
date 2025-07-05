@@ -1,9 +1,3 @@
-<?php
-
-declare(strict_types=1);
-
-?>
-
 @props(['align' => 'right', 'width' => '48', 'contentClasses' => 'bg-white py-1 dark:bg-gray-700'])
 
 @php
@@ -41,5 +35,3 @@ declare(strict_types=1);
         </div>
     </div>
 </div>
-
-<?php

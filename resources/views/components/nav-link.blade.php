@@ -1,9 +1,3 @@
-<?php
-
-declare(strict_types=1);
-
-?>
-
 @props([
     'active',
 ])
@@ -18,5 +12,3 @@ declare(strict_types=1);
 <a {{ $attributes->merge(['class' => $classes]) }}>
     {{ $slot }}
 </a>
-
-<?php

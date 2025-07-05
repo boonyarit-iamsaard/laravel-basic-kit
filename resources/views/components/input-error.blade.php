@@ -1,9 +1,3 @@
-<?php
-
-declare(strict_types=1);
-
-?>
-
 @props([
     'messages',
 ])
@@ -15,5 +9,3 @@ declare(strict_types=1);
         @endforeach
     </ul>
 @endif
-
-<?php
