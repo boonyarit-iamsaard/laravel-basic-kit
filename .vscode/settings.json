@@ -2,6 +2,7 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "laravel-pint.enable": true,
+    "Laravel.translation.diagnostics": false,
     "[blade]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
