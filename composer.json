@@ -70,7 +70,7 @@
         "test:pest": "pest",
         "test:pint": "pint --test",
         "test:rector": "rector process --dry-run",
-        "test:types": "phpstan analyse",
+        "test:types": "phpstan analyse --memory-limit=2G",
         "test": [
             "@test:format",
             "@test:lint",
