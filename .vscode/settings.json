@@ -3,6 +3,9 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "laravel-pint.enable": true,
     "Laravel.translation.diagnostics": false,
+    "[php]": {
+        "editor.defaultFormatter": "open-southeners.laravel-pint"
+    },
     "[blade]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
