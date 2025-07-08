@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Filament\Admin\Resources\Users\Schemas;
 
+use App\Enums\Role;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
@@ -30,6 +32,9 @@ final class UserForm
                         TextInput::make('email')
                             ->disabled()
                             ->readOnly(),
+                        Select::make('role')
+                            ->options(Role::class)
+                            ->default(Role::User),
                     ]),
             ]);
     }
