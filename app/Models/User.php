@@ -33,6 +33,8 @@ final class User extends Authenticatable implements MustVerifyEmail
         'email',
         'password',
         'role',
+        'google_id',
+        'email_verified_at',
     ];
 
     /**
@@ -44,6 +46,11 @@ final class User extends Authenticatable implements MustVerifyEmail
         'password',
         'remember_token',
     ];
+
+    public function hasPassword(): bool
+    {
+        return $this->password !== null;
+    }
 
     /**
      * Get the attributes that should be cast.

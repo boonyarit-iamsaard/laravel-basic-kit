@@ -2,6 +2,21 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
+    <div class="mb-4">
+        <form method="GET" action="{{ route('auth.socialite.redirect', 'google') }}">
+            <x-primary-button class="w-full justify-center">Sign in with Google</x-primary-button>
+        </form>
+    </div>
+
+    <div class="relative my-4">
+        <div class="absolute inset-0 flex items-center">
+            <div class="w-full border-t border-gray-300"></div>
+        </div>
+        <div class="relative flex justify-center text-sm">
+            <span class="bg-white px-2 text-gray-500">Or continue with</span>
+        </div>
+    </div>
+
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
