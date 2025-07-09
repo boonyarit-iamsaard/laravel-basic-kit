@@ -42,8 +42,15 @@
                 :value="old('email', $user->email)"
                 required
                 autocomplete="username"
+                :disabled="$user->google_id !== null"
             />
             <x-input-error class="mt-2" :messages="$errors->get('email')" />
+
+            @if ($user->google_id !== null)
+                <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                    {{ __('You cannot change your email address because you are logged in with Google.') }}
+                </p>
+            @endif
 
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
                 <div>
