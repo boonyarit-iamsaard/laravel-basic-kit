@@ -2,10 +2,15 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <div class="mb-4">
-        <form method="GET" action="{{ route('auth.socialite.redirect', 'google') }}">
+    <div class="mb-4 space-y-4">
+        <form method="GET" action="{{ route('auth.socialite.redirect', ['provider' => 'google']) }}">
             <x-primary-button class="w-full justify-center">Sign in with Google</x-primary-button>
         </form>
+        <div class="mb-4">
+            <form method="GET" action="{{ route('auth.socialite.redirect', ['provider' => 'line']) }}">
+                <x-primary-button class="w-full justify-center">Sign in with LINE</x-primary-button>
+            </form>
+        </div>
     </div>
 
     <div class="relative my-4">

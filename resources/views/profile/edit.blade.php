@@ -11,7 +11,7 @@
                 <div class="max-w-xl">
                     @include('profile.partials.update-profile-information-form')
 
-                    @if (auth()->user()?->google_id)
+                    @if (isset($provider))
                         <div
                             class="mt-6 rounded-md border-l-4 border-blue-500 bg-blue-100 p-4 text-blue-700 dark:border-blue-400 dark:bg-blue-900 dark:text-blue-200"
                         >
@@ -31,7 +31,9 @@
                                     </svg>
                                 </div>
                                 <div class="ml-3">
-                                    <p class="text-sm font-medium">You are signed in using your Google account.</p>
+                                    <p class="text-sm font-medium">
+                                        You are signed in using your {{ $provider }} account.
+                                    </p>
                                 </div>
                             </div>
                         </div>

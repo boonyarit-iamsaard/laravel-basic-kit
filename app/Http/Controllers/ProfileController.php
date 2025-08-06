@@ -18,8 +18,17 @@ final class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
+        $user = $request->user();
+
+        $provider = match (true) {
+            isset($user->google_id) => 'Google',
+            isset($user->line_id) => 'LINE',
+            default => null,
+        };
+
         return view('profile.edit', [
-            'user' => $request->user(),
+            'user' => $user,
+            'provider' => $provider,
         ]);
     }
 

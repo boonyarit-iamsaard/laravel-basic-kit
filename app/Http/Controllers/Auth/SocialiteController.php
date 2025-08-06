@@ -22,7 +22,7 @@ final class SocialiteController extends Controller
         $socialiteUser = Socialite::driver($provider)->user();
 
         $user = User::query()
-            ->where('google_id', $socialiteUser->getId())
+            ->where($provider.'_id', $socialiteUser->getId())
             ->orWhere('email', $socialiteUser->getEmail())
             ->first();
 
@@ -39,7 +39,7 @@ final class SocialiteController extends Controller
         $user = User::create([
             'name' => $socialiteUser->getName(),
             'email' => $socialiteUser->getEmail(),
-            'google_id' => $socialiteUser->getId(),
+            $provider.'_id' => $socialiteUser->getId(),
             'email_verified_at' => now(),
         ]);
 
